@@ -1,3 +1,4 @@
+import 'package:bps_project1/login_page.dart';
 import 'package:flutter/material.dart';
 
 class DaftarPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class _DaftarPageState extends State<DaftarPage> {
         child: Column(
           children: [
             SizedBox(
-              height: 50,
+              height: 30,
             ),
             Text(
               "Daftar",
@@ -40,18 +41,18 @@ class _DaftarPageState extends State<DaftarPage> {
                         hintText: "Silahkan Masukan Nama Lengkap"),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(1)),
-                      labelText: "Nama Pengguna*",
-                      hintText: "Silahkan Masukan Nama Pengguna",
+                      labelText: "Email*",
+                      hintText: "Silahkan Masukan Email",
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   TextField(
                       decoration: InputDecoration(
@@ -61,7 +62,7 @@ class _DaftarPageState extends State<DaftarPage> {
                           hintText: "Silahkan Masukan NIP"),
                       obscureText: true),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -71,17 +72,7 @@ class _DaftarPageState extends State<DaftarPage> {
                         hintText: "Silahkan Masukan Kata Sandi"),
                   ),
                   SizedBox(
-                    height: 20,
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(1)),
-                        labelText: "Email Pribadi*",
-                        hintText: "Silahkan Masukan Email Pribadi"),
-                  ),
-                  SizedBox(
-                    height: 100,
+                    height: 30,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -90,15 +81,20 @@ class _DaftarPageState extends State<DaftarPage> {
                         constraints:
                             BoxConstraints.tightFor(width: 1000, height: 40),
                         child: ElevatedButton(
-                          onPressed: () {},
                           child: Text(
                             "Daftar",
                             style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()));
+                          },
                           style: ElevatedButton.styleFrom(
                               primary: Colors.orangeAccent,
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20))),
+                                  borderRadius: BorderRadius.circular(15))),
                         ),
                       ),
                     ],

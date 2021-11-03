@@ -1,3 +1,5 @@
+import 'package:bps_project1/ProfilPage.dart';
+import 'package:bps_project1/navBar.dart';
 import 'package:flutter/material.dart';
 
 class AkunPage extends StatefulWidget {
@@ -9,6 +11,7 @@ class _AkunPageState extends State<AkunPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: NavBar(),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -23,7 +26,10 @@ class _AkunPageState extends State<AkunPage> {
                   onPressed: () {},
                   child: Text(
                     "Edit Profil",
-                    style: TextStyle(fontSize: 21, color: Colors.black),
+                    style: TextStyle(
+                        fontSize: 21,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
@@ -40,7 +46,7 @@ class _AkunPageState extends State<AkunPage> {
                         height: 30,
                       ),
                       Container(
-                        width: 175,
+                        width: 300,
                         child: TextField(
                           autofocus: false,
                           decoration: InputDecoration(
@@ -56,7 +62,7 @@ class _AkunPageState extends State<AkunPage> {
                         height: 10,
                       ),
                       Container(
-                        width: 175,
+                        width: 300,
                         child: TextField(
                           autofocus: false,
                           decoration: InputDecoration(
@@ -73,7 +79,7 @@ class _AkunPageState extends State<AkunPage> {
                         height: 10,
                       ),
                       Container(
-                        width: 175,
+                        width: 300,
                         child: TextField(
                           autofocus: false,
                           decoration: InputDecoration(
@@ -86,20 +92,19 @@ class _AkunPageState extends State<AkunPage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
                     ],
                   ),
                 ),
-                SizedBox(height: 50),
-                SizedBox(
-                  height: 10,
-                ),
+                SizedBox(height: 20),
                 ConstrainedBox(
-                  constraints: BoxConstraints.tightFor(width: 1000, height: 40),
+                  constraints: BoxConstraints.tightFor(width: 300, height: 40),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage()));
+                    },
                     child: Text(
                       "Simpan Perubahan",
                       style: TextStyle(fontSize: 18, color: Colors.white),
@@ -107,25 +112,13 @@ class _AkunPageState extends State<AkunPage> {
                     style: ElevatedButton.styleFrom(
                         primary: Colors.orangeAccent,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20))),
+                            borderRadius: BorderRadius.circular(15))),
                   ),
                 ),
               ],
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings_backup_restore_rounded),
-              label: "Riwayat"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle), label: "Akun"),
-        ],
-        fixedColor: Colors.black,
-        backgroundColor: Colors.orangeAccent,
       ),
     );
   }

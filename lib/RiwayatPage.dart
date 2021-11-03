@@ -1,16 +1,16 @@
-import 'package:bps_project1/navBar.dart';
+import 'package:bps_project1/HomePage.dart';
+import 'package:bps_project1/LupaSandiPage.dart';
 import 'package:flutter/material.dart';
 
-class MasukPage extends StatefulWidget {
+class RiwayatPage extends StatefulWidget {
   @override
-  _MasukPageState createState() => _MasukPageState();
+  _RiwayatPageState createState() => _RiwayatPageState();
 }
 
-class _MasukPageState extends State<MasukPage> {
+class _RiwayatPageState extends State<RiwayatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: NavBar(),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -19,15 +19,15 @@ class _MasukPageState extends State<MasukPage> {
               height: 50,
             ),
             Text(
-              "Perizinan Masuk",
-              style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+              "Riwayat",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 20,
             ),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -38,8 +38,8 @@ class _MasukPageState extends State<MasukPage> {
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(1)),
-                        labelText: "NIP*",
-                        hintText: "Silahkan Masukan NIP"),
+                        labelText: "Username",
+                        hintText: "Silahkan Masukan Username"),
                   ),
                   SizedBox(
                     height: 10,
@@ -48,20 +48,21 @@ class _MasukPageState extends State<MasukPage> {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(1)),
-                      labelText: "Keterangan*",
-                      hintText: "Silahkan Masukan Keterangan",
+                      labelText: "Kata Sandi",
+                      hintText: "Silahkan Masukan Kata Sandi",
                     ),
+                    obscureText: true,
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(1)),
-                          labelText: "Waktu Kembali*",
-                          hintText: "Silahkan Masukan Waktu Kembali"),
-                      obscureText: true),
+                  Row(children: [
+                    TextButton(
+                        child: Text('Lupa Kata Sandi?'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LupaSandiPage()));
+                        })
+                  ]),
                   SizedBox(
                     height: 20,
                   ),
@@ -72,15 +73,20 @@ class _MasukPageState extends State<MasukPage> {
                         constraints:
                             BoxConstraints.tightFor(width: 1000, height: 40),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()));
+                          },
                           child: Text(
-                            "Masukkan",
+                            "Masuk",
                             style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
                           style: ElevatedButton.styleFrom(
                               primary: Colors.orangeAccent,
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20))),
+                                  borderRadius: BorderRadius.circular(15))),
                         ),
                       ),
                     ],

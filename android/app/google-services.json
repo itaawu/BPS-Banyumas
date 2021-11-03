@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "91810548157",
+    "project_id": "bpsbanyumas-8335b",
+    "storage_bucket": "bpsbanyumas-8335b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91810548157:android:06613872768dc4ec35ead4",
+        "android_client_info": {
+          "package_name": "com.example.bps_project1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "91810548157-g4n2b5rq1sok6k1fsqrel2ufp68jbd4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bps_project1",
+            "certificate_hash": "1b89b67320d3d01b2844a200be7204069b28fcf9"
+          }
+        },
+        {
+          "client_id": "91810548157-gq4oll4rh4qenr4j7q2o8ogb9p8nfosl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgdnh263wPm6q7a41AZllKSSIyU-iSNkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "91810548157-gq4oll4rh4qenr4j7q2o8ogb9p8nfosl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

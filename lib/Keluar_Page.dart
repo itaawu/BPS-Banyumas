@@ -1,3 +1,4 @@
+import 'package:bps_project1/navBar.dart';
 import 'package:flutter/material.dart';
 
 class KeluarPage extends StatefulWidget {
@@ -9,6 +10,7 @@ class _KeluarPageState extends State<KeluarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: NavBar(),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -30,7 +32,7 @@ class _KeluarPageState extends State<KeluarPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -40,7 +42,7 @@ class _KeluarPageState extends State<KeluarPage> {
                         hintText: "Silahkan Masukan NIP"),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -51,7 +53,7 @@ class _KeluarPageState extends State<KeluarPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -62,7 +64,7 @@ class _KeluarPageState extends State<KeluarPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   TextField(
                       decoration: InputDecoration(
@@ -72,7 +74,7 @@ class _KeluarPageState extends State<KeluarPage> {
                           hintText: "Silahkan Masukan Waktu Kembali"),
                       obscureText: true),
                   SizedBox(
-                    height: 120,
+                    height: 20,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -99,18 +101,6 @@ class _KeluarPageState extends State<KeluarPage> {
             )
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings_backup_restore_rounded),
-              label: "Riwayat"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle), label: "Akun"),
-        ],
-        fixedColor: Colors.black,
-        backgroundColor: Colors.orangeAccent,
       ),
     );
   }

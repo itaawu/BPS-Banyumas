@@ -1,12 +1,12 @@
-import 'package:bps_project1/login_page.dart';
+import 'package:bps_project1/loginPageAdmin.dart';
 import 'package:flutter/material.dart';
 
-class LupaSandiPage extends StatefulWidget {
+class LupaSandiAdmin extends StatefulWidget {
   @override
-  _LupaSandiPageState createState() => _LupaSandiPageState();
+  _LupaSandiAdminState createState() => _LupaSandiAdminState();
 }
 
-class _LupaSandiPageState extends State<LupaSandiPage> {
+class _LupaSandiAdminState extends State<LupaSandiAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +58,7 @@ class _LupaSandiPageState extends State<LupaSandiPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginPage()));
+                                  builder: (context) => LoginPageAdmin()));
                         },
                         child: Text(
                           "Dapatkan Notifikasi",

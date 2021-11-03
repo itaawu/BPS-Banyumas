@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:bps_project1/login_page.dart';
 import 'package:flutter/material.dart';
 
 class BoardingPage extends StatefulWidget {
@@ -6,10 +9,28 @@ class BoardingPage extends StatefulWidget {
 }
 
 class _BoardingPageState extends State<BoardingPage> {
+  final splashDelay = 5;
+
   @override
+  void initState() {
+    super.initState();
+
+    _loadWidget();
+  }
+
+  _loadWidget() async {
+    var _duration = Duration(seconds: splashDelay);
+    return Timer(_duration, navigationPage);
+  }
+
+  void navigationPage() {
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (BuildContext context) => LoginPage()));
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.white,
         body: Center(
             child: Column(
           children: [
@@ -21,13 +42,23 @@ class _BoardingPageState extends State<BoardingPage> {
               children: [
                 Image.asset(
                   "assets/img/bps.png",
-                  height: 200,
-                  width: 250,
+                  height: 180,
+                  width: 180,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
                 ),
                 Text(
-                  "Badan Pusat Statistik Kabupaten Banyumas",
+                  "Badan Pusat Statistik",
                   style: TextStyle(
-                    fontSize: 21,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  "Kabupaten Banyumas",
+                  style: TextStyle(
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
