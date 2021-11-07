@@ -1,4 +1,4 @@
-import 'package:bps_project1/wrapper.dart';
+import 'package:bps_project1/boarding_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Wrapper(),
+      home: BoardingPage(),
     );
   }
 }

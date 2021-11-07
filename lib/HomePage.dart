@@ -9,70 +9,76 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Material MyBangru(String icon, String text, int color) {
+    return Material(
+      color: Colors.white,
+      elevation: 15.0,
+      borderRadius: BorderRadius.circular(24.0),
+      child: Center(
+          child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(text,
+                        style: TextStyle(
+                          color: Color(color),
+                          fontSize: 20.0,
+                        ))),
+                Material(
+                    borderRadius: BorderRadius.circular(24.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Image.asset('img'),
+                    ))
+              ],
+            )
+          ],
+        ),
+      )),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavBar(),
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 50,
-            ),
-            Text(
-              "Home",
-              style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.upload, color: Colors.red, size: 50),
-                      tooltip: "Perizinan Keluar",
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => KeluarPage()));
-                      },
-                    ),
-                    Text(
-                      "Perizinan Keluar",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.download, color: Colors.green, size: 50),
-                      tooltip: "Perizinan Masuk",
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MasukPage()));
-                      },
-                    ),
-                    Text(
-                      "Perizinan Masuk",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+      body: OrientationBuilder(
+          builder: (BuildContext context, Orientation orientation) {
+        return GridView.count(
+          crossAxisCount: orientation == Orientation.portrait ? 2 : 2,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0,
+          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+          children: <Widget>[
+            Container(
+                child: Material(
+              child: InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MasukPage()));
+                  },
+                  child:
+                      MyBangru("img/download.png", "Izin Masuk", 0xff000000)),
+            )),
+            Container(
+                child: Material(
+              child: InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => KeluarPage()));
+                  },
+                  child: MyBangru("img/Upload.png", "Izin Keluar", 0xff000000)),
+            )),
           ],
-        ),
-      ),
+        );
+      }),
     );
   }
 }

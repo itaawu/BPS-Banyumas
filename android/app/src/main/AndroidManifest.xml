@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bps_project1">
    <application
-        android:label="bps_project1"
+        android:label="BPS Banyumas"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
